@@ -1,0 +1,7 @@
+.del, .edit {
+	cursor: pointer;
+}
+#output {
+	color: red;
+	display: none;
+}

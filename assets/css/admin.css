@@ -1,0 +1,8 @@
+/* SHOW USERS PAGE STYLE */
+#userstable {
+	width: 100%;
+}
+
+.del, .edit {
+	cursor: pointer;
+}

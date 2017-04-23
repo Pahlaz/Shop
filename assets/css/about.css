@@ -1,0 +1,52 @@
+/* Header Styles */
+.row{
+	display: flex;
+}
+
+.team h1{
+	font-size: 36px;
+	margin: 0 0 10px 0;
+}
+.member{
+	margin-bottom: 10px;
+}
+.member .profile-pic img{
+	width: 140px;
+	height: 140px;
+	margin-right: 10px;
+}
+.details span{
+	display: block;
+}
+.details .name{
+	font-size: 32px;
+}
+.details .email{
+	margin-bottom: 5px;
+}
+.social-links img{
+	width: 40px;
+	height: 40px;
+	opacity: .7;
+	transition: all .3s ease-in-out;
+}
+.social-links img:hover{
+	opacity: 1;
+}
+
+@media (max-width:500px){
+	.profile-pic img{
+		width: 100px;
+		height: 100px;
+	}
+	.details .name{
+		font-size: 22px;
+	}
+	.details .email{
+		font-size: 11px;
+	}
+	.social-links img{
+		width: 25px;
+		height: 25px;
+	}
+}

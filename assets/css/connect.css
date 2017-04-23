@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+}
+.wrapper {
+  padding-top: 35px;
+}
+.connect-container{
+  position: relative;
+}
+
+.connect-container .profile-pic img, .connect-container form input, .signin, .signup {
+  width: 240px;  
+}
+.connect-container .profile-pic img{
+	position: relative;
+	left: calc(50% - 120px);
+	transition: all .3s;
+}
+
+.post{
+  margin-bottom: 40px;
+}
+.post label{
+  font-style: italic;
+  font-size: 18px;
+  color: #7E827B;
+}
+.post select{
+  margin-left: 10px;
+  font-style: italic;
+  font-size: 18px;
+}
+.signin, .signup{
+	margin: 20px auto;
+  text-align: center;
+}
+.signin p, .signup p{
+  text-align: center;
+  margin: 0;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 40px;
+}
+.input-group input {
+  padding: 10px 0;
+}
+.input-group label{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-30%);
+  transform: translateY(-30%);
+  font-style: italic;
+  font-size: 18px;
+  color: #7E827B;
+  pointer-events: none;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+}
+.input-group input:focus + label,
+.input-group input.has-value + label {
+  top: -10px;
+  font-size: 12px;
+  color: #7E827B;
+}
+.connect-container form input {
+  background: none;
+  border: solid 2px #2f5a78;
+  color: #2f5a78;
+  font-size: 24px;
+  display: inline-block;
+}
+.connect-container form input:focus, input:active {
+  outline: none;
+}
+.connect-container form input[type="text"], .connect-container form input[type="email"], .connect-container form input[type="password"] {
+  border: none;
+  border-bottom: solid 2px #2f5a78;
+}
+.connect-container form input[type="submit"]{
+  margin-bottom: 10px;
+  padding: 15px 40px;
+}
+.connect-container form input[type="submit"]:active {
+  color: white;
+  background: #2f5a78;
+}
+
+
+
+@media screen and (max-width: 500px){
+	.profile-pic img, .connect-container form input, .signin, .signup {
+		width: 200px;
+	}
+	.profile-pic img{
+		left: calc(50% - 100px);
+	}	
+
+	.connect-container form input {
+  	font-size: 18px;
+	}
+}
+
+

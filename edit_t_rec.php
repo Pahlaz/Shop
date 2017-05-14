@@ -13,12 +13,14 @@
 	}
 	else {
 		//get the values from the page
-		$btnId = $_POST[btnId];
+		
+		
+		$editBtnId = $_POST[editBtnId];
 
-		$query = "DELETE FROM shop.customers WHERE cid=\"$btnId\"";
+		$query = "UPDATE shop.transactions SET  WHERE tid=\"$editBtnId\"";
 
 		if (mysqli_query($connection, $query)) {
-			echo "Record deleted successfully";
+			echo "Transaction updated successfully";
 		}
 		else {
 		   mysqli_close($connection);

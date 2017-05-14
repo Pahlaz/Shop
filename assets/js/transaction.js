@@ -1,27 +1,27 @@
 (function() {
   	'use strict';
 
-   	var httpRequest = new XMLHttpRequest();
-   	var delBtn = document.getElementsByClassName('del');
-   	var editBtn = document.getElementsByClassName('edit');
-   	var stBtn = document.getElementById('st')
-   	var transactions = document.getElementById('transactions');
+	var httpRequest = new XMLHttpRequest();
+	var delBtn = document.getElementsByClassName('del');
+	var editBtn = document.getElementsByClassName('edit');
+	var stBtn = document.getElementById('st');
+	var transactions = document.getElementById('transactions');
 	
 	////////////////////////////////////////////
-   	// AJAX Request
-   	////////////////////////////////////////////
+ 	// AJAX Request
+ 	////////////////////////////////////////////
    	
-   	function req(url, funName, param) {
-   		if (!httpRequest) {
+  	function req(url, funName, param) {
+  		if (!httpRequest) {
 	      alert('Error in making a ajax request');
-	    }
-	    httpRequest.onreadystatechange = funName;
-	    httpRequest.open('POST', url);
-	    httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	    httpRequest.send(param);
-   	}
+      }
+	   httpRequest.onreadystatechange = funName;
+	   httpRequest.open('POST', url);
+	   httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	   httpRequest.send(param);
+   }
 
-   	if(stBtn){
+   if(stBtn){
    	stBtn.addEventListener('click', function() {
    		let cid = document.getElementById('cid').value;
    		let date = document.getElementById('date').value;
@@ -30,18 +30,19 @@
    		transactions.src = 'show_transactions.php';
    		transactions.style.display = 'block';
    	});
-   	}
-   	function showTransactions() {
-	    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+   }
+   function showTransactions() {
+	   if (httpRequest.readyState === XMLHttpRequest.DONE) {
 	    	if (httpRequest.status === 200) { 
 	    		// transactions.innerHTML = httpRequest.responseText;
-	     	} else {
+	     	} 
+	     	else {
 	        	alert('Can\'t able to show the transactions');
-	      	}
-	    }
+	      }
+	   }
 	}
 
-   	// Adding Event Listner to delete buttons
+   // Adding Event Listner to delete buttons
 	for (var i = 0; i < delBtn.length; i++) {
 		delBtn[i].addEventListener('click', function() {
 			var btnId = this.id.substring(3);
@@ -63,29 +64,29 @@
 	}
 
 	// Add Event Listner to edit buttons
-	// for (var i = 0; i < editBtn.length; i++) {
-	// 	editBtn[i].addEventListener('click', function() {
-	// 		var editId = this.id.substring(3);
+	for (var i = 0; i < editBtn.length; i++) {
+		editBtn[i].addEventListener('click', function() {
+			var editId = this.id.substring(3);
 	
-	// 		alert('editing');
-	// 		if (!httpRequest) {
-	// 	      alert('Error in making a ajax request');
-	// 	    }
-	// 	    // httpRequest.onreadystatechange = editRecord;
-	// 	    // httpRequest.open('POST', 'edit_record.php');
-	// 	    // httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	// 	    // httpRequest.send('btnId='+btnId);
+			alert('editing');
+			if (!httpRequest) {
+		      alert('Error in making a ajax request');
+		    }
+		    // httpRequest.onreadystatechange = editRecord;
+		    // httpRequest.open('POST', 'edit_record.php');
+		    // httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		    // httpRequest.send('btnId='+btnId);
 		
-	// 	});
-	// }
-	// function editRecord() {
-	//     if (httpRequest.readyState === XMLHttpRequest.DONE) {
-	//     	if (httpRequest.status === 200) { 
-	//     		alert(httpRequest.responseText);
-	//     		window.location = "show_customers.php"
-	//      	} else {
-	//         	alert('There was a problem deleting the record.');
-	//       	}
-	//     }
-	// }
+		});
+	}
+	function editRecord() {
+	    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+	    	if (httpRequest.status === 200) { 
+	    		alert(httpRequest.responseText);
+	    		window.location = "show_customers.php"
+	     	} else {
+	        	alert('There was a problem deleting the record.');
+	      	}
+	    }
+	}
 })();

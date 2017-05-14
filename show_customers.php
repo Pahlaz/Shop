@@ -6,8 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SHOP | Show Customers</title>
 
-	<link rel="manifest" href="manifest.json">
-
 	<link rel="stylesheet" href="assets/css/header.css">
 	<link rel="stylesheet" href="assets/css/customer.css">
 </head>
@@ -22,21 +20,19 @@
 				<thead>
 			    	<tr>
 			    		<th></th>
-			      		<th>Name</th>
+			      	<th>Name</th>
 					 	<th>Address</th>
-				      	<th>City</th>
-				      	<th>Phone No.</th>
-				      	<th></th>
-				    </tr>
+				      <th>City</th>
+				      <th>Phone No.</th>
+				      <th></th>
+				   </tr>
 			  	</thead>
 			  	<tbody>
 				<?php
-					// connecting to the database
-					$address = "localhost";
-					$username = "root";
-					$password = "root";
+					require_once 'db.php';
 
-					$connection = mysqli_connect($address, $username, $password);
+					// connecting to the database
+					$connection = connectDB();
 
 					if (!$connection) {
 					   // die("Connection failed: " . mysqli_connect_error());
@@ -63,12 +59,11 @@
 				?>
 				</tbody>
 			</table>
+			
 			<div id="output"></div>
 		</div>
 
 	</div>
-
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
 
 	<script src="assets/lib/jquery/jquery-1.12.2.min.js" type="text/javascript"></script>
 	<script src="assets/js/script.js" type="text/javascript"></script>

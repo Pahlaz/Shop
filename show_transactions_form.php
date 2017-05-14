@@ -6,8 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SHOP | Show Transaction</title>
 
-	<link rel="manifest" href="manifest.json">
-
 	<link rel="stylesheet" href="assets/css/header.css">
 	<link rel="stylesheet" href="assets/css/transaction.css">
 </head>
@@ -52,9 +50,9 @@
 
 		<iframe id="transactions"></iframe>
 
-	</div>
+		<div id="output"></div>
 
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+	</div>
 
 	<script src="assets/lib/jquery/jquery-1.12.2.min.js" type="text/javascript"></script>
 	<script src="assets/js/script.js" type="text/javascript"></script>

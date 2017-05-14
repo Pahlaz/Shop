@@ -6,8 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SHOP | Add Transactions</title>
 
-	<link rel="manifest" href="manifest.json">
-
 	<link rel="stylesheet" href="assets/css/header.css">
 	<link rel="stylesheet" href="assets/css/transaction.css">
 </head>
@@ -49,7 +47,7 @@
 			<input type="date" name="date">
 			<input type="number" name="credit" placeholder="credited ammount">
 			<input type="number" name="debit" placeholder="debited ammount">
-			<input type="text" name="comment">
+			<input type="text" name="comment" placeholder="describe transaction">
 
 			<input type="submit" name="at" value="Add Transaction">
 

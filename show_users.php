@@ -16,16 +16,16 @@
 	<link rel="stylesheet" href="assets/css/header.css">
 	<link rel="stylesheet" href="assets/css/admin.css">
 </head>
-<body style="background: url('assets/img/bg1.png');">
+<body>
 	<div class="wrapper">
 		<?php include 'header.php'; ?>
 		
-		<table id="userstable" border="1" cellspacing="0" cellpadding="10px">
+		<table id="userstable" border="1" cellspacing="0" cellpadding="10px" style="width: 50%; border: 0; ">
 			<thead>
 	    	<tr>
 	      	<th>NAME</th>
 			 		<th>POST</th>
-	      	<th></th>
+	      	<th style="border: 0;"></th>
 		    </tr>
 	  	</thead>
 	  	<tbody>
@@ -45,7 +45,7 @@
 									<tr>
 										<td><?php echo $arr[1];?></td>
 										<td><?php echo $arr[2];?></td>
-										<td id="del<?php echo $arr[0];?>" class="del" style="background: red;">Delete</td>
+										<td id="del<?php echo $arr[0];?>" class="del" style="border: 0;width: 20px;height: 20px;"><img src="assets/img/delete.png" alt="delete" style="width: 20px;height: 20px;"></td>
 									</tr>
 				<?php
 								}
@@ -58,10 +58,8 @@
 			</tbody>
 	</div>
 
-	<script src="assets/lib/jquery/jquery-1.12.2.min.js" type="text/javascript"></script>
 	<script src="assets/js/script.js" type="text/javascript"></script>
 	<script src="assets/js/admin.js" type="text/javascript"></script>
+
 </body>
 </html>
-
-<?php require_once 'styles.php';?>

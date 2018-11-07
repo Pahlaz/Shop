@@ -7,10 +7,13 @@
 	<title>SHOP | Sign In</title>
 
 	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/connect.css">	
 </head>
 <body>
 	<div class="wrapper">
+		<?php include 'header.php'; ?>
+
 		<div class="connect-container">
 			<div class="profile-pic">
 				<img src="assets/img/user.png">
@@ -32,7 +35,7 @@
 		</div>
 	</div>
 
-	<script src="assets/lib/jquery/jquery-1.12.2.min.js" type="text/javascript"></script>	
+	<script src="assets/js/script.js" type="text/javascript"></script>
 	<script src="assets/js/connect.js" type="text/javascript"></script>
 </body>
 </html>

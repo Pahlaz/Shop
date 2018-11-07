@@ -17,13 +17,15 @@
    var registerBtn = document.querySelector("#register");
    var httpRequest = new XMLHttpRequest();
 
-   registerBtn.onclick = function() {
-      if (!httpRequest) {
-         alert('Error in making a ajax request');
-      }
-      else {
-         httpRequest.open('POST', 'reg_user.php');
-         httpRequest.send();
+   if(registerBtn) {
+      registerBtn.onclick = function() {
+         if (!httpRequest) {
+            alert('Error in making a ajax request');
+         }
+         else {
+            httpRequest.open('POST', 'reg_user.php');
+            httpRequest.send();
+         }
       }
    }
 

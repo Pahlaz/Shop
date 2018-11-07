@@ -1,13 +1,13 @@
 /* Toggle Button */
 .toggle-btn{
 	width: 20px;
-	height: 23px;
+	height: 20px;
 	cursor: pointer;
 	display: inline-flex;
 	margin-right: 10px;
-	position: absolute;
-   left: 20px;
-   top: 13px;
+	background: transparent;
+	border: 0;
+	padding: 0;
 }
 .toggle-btn span, .toggle-btn span:before, .toggle-btn span:after{
 	width: 20px;
@@ -22,10 +22,12 @@
 .toggle-btn span:before{
 	content: '';
 	top: -6px;
+	left: 0;
 }
 .toggle-btn span:after{
 	content: '';
 	top: 6px;
+	left: 0;
 }
 .toggle-btn.onclick span{
 	background: none;

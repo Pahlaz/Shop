@@ -1,0 +1,43 @@
+.user-profile {
+	position: relative;
+}
+.profile-image {
+	display: inline-block;
+}
+.profile-image img {
+	width: 222px;
+}
+.details {
+	color: #232323;
+	position: absolute;
+   top: 50%;
+   left: 266px;
+   font-size: 20px;
+   transform: translateY(-50%);
+	display: inline-block;
+}
+.details .name {
+	font-size: 36px;
+}
+.details .email, .details .post {
+	color: #aaa;
+}
+
+#account-nav {
+	width: 222px;
+	display: inline-block;
+}
+#account-nav ul {
+	list-style: none;
+	padding: 0;
+}
+#account-nav li:hover {
+	background: #eee;
+}
+
+#account-nav li a {
+	color: #232323;
+	padding: 10px 10px 10px 45px;
+	display: block;
+	font-size: 18px;
+}

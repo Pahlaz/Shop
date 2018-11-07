@@ -10,57 +10,62 @@
 		exit();
 	}
 	else {
-		$name = $_POST['name'];
-		$addr = $_POST['addr'];
-		$city = $_POST['city'];
-		$phno = $_POST['phno'];
+		$entityId = $_POST['entityId'];
 
-		$cid = $_POST['editBtnId'];
+		if($entityId == 'customer') {
+			$name = $_POST['name'];
+			$addr = $_POST['addr'];
+			$city = $_POST['city'];
+			$phno = $_POST['phno'];
+			$cid = $_POST['editBtnId'];
 
-		$query = "SELECT name, addr, city, phno FROM shop.customers WHERE cid=\"$cid\"";
-		$result = mysqli_query($connection, $query);
+			$query = "UPDATE shop.customers SET name = \"$name\", addr = \"$addr\", city = \"$city\", phno = \"$phno\" WHERE cid=\"$cid\"";
 
-		// FETCHING THE DETAILS BEFORE UPDATE
-		if (mysqli_num_rows($result) > 0) {
-			$db_results = mysqli_fetch_assoc($result);
-			
-			$name_from_db = $db_results["name"];
-			$addr_from_db = $db_results["addr"];
-			$city_from_db = $db_results["city"];
-			$phno_from_db = $db_results["phno"];
+			if (mysqli_query($connection, $query)) {
+				echo 'Customer updated successfully.';
+			}
+			else {
+			   mysqli_close($connection);
+			   header("location: error.php");
+				exit();
+			}
 		}
-		else {
-			header('location: error.php');
-		}
+		else if($entityId == 'transaction') {
+			$cid = $_POST['cid'];
+			$tdate = $_POST['tdate'];
+			$credit = $_POST['credit'];
+			$debit = $_POST['debit'];
+			$comment = $_POST['comment'];
+			$tid = $_POST['editBtnId'];
 
-		// UPDATED DETAILS
-		if($name == ' ' || $name == null) {
-			$name = $name_from_db;
-		}
-		if($addr == ' ' || $addr == null) {
-			$addr = $addr_from_db;
-		}
-		if($city == ' ' || $city == null) {
-			$city = $city_from_db;
-		}
-		if($phno == ' ' || $phno == null) {
-			$phno = $phno_from_db;
-		}
+			$query = "UPDATE shop.transactions SET cid = \"$cid\", tdate = \"$tdate\", credit = \"$credit\", debit = \"$debit\", comment = \"$comment\" WHERE tid=\"$tid\"";
 
-		$query = "UPDATE shop.customers SET name = \"$name\", addr = \"$addr\", city = \"$city\", phno = \"$phno\" WHERE cid=\"$cid\"";
-
-		if (mysqli_query($connection, $query)) {
-?>
-			<script>
-				alert('Record Updated successfully');
-				window.location = 'show_customers.php';
-			</script>
-<?php
+			if (mysqli_query($connection, $query)) {
+				echo 'Transaction updated successfully.';
+			}
+			else {
+			   mysqli_close($connection);
+			   header("location: error.php");
+				exit();
+			}
 		}
-		else {
-		   mysqli_close($connection);
-		   header("location: error.php");
-			exit();
+		else if($entityId == 'product') {
+			$name = $_POST['name'];
+			$category = $_POST['category'];
+			$brand = $_POST['brand'];
+			$price = $_POST['price'];
+			$pid = $_POST['editBtnId'];
+
+			$query = "UPDATE shop.products SET name = \"$name\", category = \"$category\", brand = \"$brand\", price = \"$price\" WHERE pid=\"$pid\"";
+
+			if (mysqli_query($connection, $query)) {
+				echo 'Product updated successfully.';
+			}
+			else {
+			   	mysqli_close($connection);
+			   	header("location: error.php");
+				exit();
+			}
 		}
 	}
 ?>

@@ -1,17 +1,19 @@
 .fun h1 {
 	margin: 0 0 10px 0;
 }
-.fun ul {
+.fun {
 	list-style: none;
 	margin: 0;
-	padding: 20px 0;
+}
+.fun ul {
+	padding: 0;
+	margin: 0;
 }
 .fun li {
 	min-width: 250px;
-	width: calc(25% - 15px);
+	width: calc(33.334% - 20px);
 	height: 150px;
 	line-height: 150px;
-	float: left;
 	text-align: center;
 	display: inline-flex;
 	background: #2b5a79;
@@ -28,4 +30,12 @@
 	width: 100%;
 	color: #eee;
 	display: block;
+}
+
+
+@media screen and (max-width: 425px) {
+	.fun li {
+		width: 100%;
+		margin: 0 0 15px 0;
+	}
 }

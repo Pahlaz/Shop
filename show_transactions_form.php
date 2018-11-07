@@ -6,58 +6,49 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SHOP | Show Transaction</title>
 
-	<link rel="stylesheet" href="assets/css/header.css">
 	<link rel="stylesheet" href="assets/css/transaction.css">
 </head>
 <body>
-	<div class="wrapper">
-		<?php include 'header.php'; ?>
+	<div id="show_transaction">
+		<h1>Show transactions</h1>
+		
+		<select id="cid" name="cid">
+			<option value="">Select a Customer</option>
+			<?php
+				// connecting to the database
+				$address = "localhost";
+				$username = "root";
+				$password = "root";
 
-		<div id="show_transaction">
-			<h1>Show transactions</h1>
-			
-			<select id="cid" name="cid">
-				<option value="">Select a Customer</option>
-				<?php
-					// connecting to the database
-					$address = "localhost";
-					$username = "root";
-					$password = "root";
+				$connection = mysqli_connect($address, $username, $password);
 
-					$connection = mysqli_connect($address, $username, $password);
+				if (!$connection) {
+				   // die("Connection failed: " . mysqli_connect_error());
+					header('Location: error.php');
+					exit();
+				}
+				else {
+					$query = "select * from shop.customers";
+					$result = mysqli_query($connection, $query);
 
-					if (!$connection) {
-					   // die("Connection failed: " . mysqli_connect_error());
-						header('Location: error.php');
-						exit();
+					while($arr = mysqli_fetch_row($result)) {
+			?>
+							<option value="<?php echo $arr[0];?>"><?php echo $arr[1];?> - <?php echo $arr[2];?></option>
+			<?php
 					}
-					else {
-						$query = "select * from shop.customers";
-						$result = mysqli_query($connection, $query);
+				}
+			?>
+		</select>
 
-						while($arr = mysqli_fetch_row($result)) {
-				?>
-  							<option value="<?php echo $arr[0];?>"><?php echo $arr[1];?> - <?php echo $arr[1];?></option>
-				<?php
-						}
-					}
-				?>
-			</select>
-
-			<input id="date" type="date" name="date">
-			<button id="st">Show Transactions</button>
-		</div>
-
-		<iframe id="transactions"></iframe>
-
-		<div id="output"></div>
-
+		<input id="date" type="date" name="date">
+		<button id="st">Show Transactions</button>
 	</div>
 
-	<script src="assets/lib/jquery/jquery-1.12.2.min.js" type="text/javascript"></script>
+	<iframe id="transactions"></iframe>
+
+	<div id="output"></div>
+
 	<script src="assets/js/script.js" type="text/javascript"></script>
 	<script src="assets/js/transaction.js" type="text/javascript"></script>
 </body>
 </html>
-
-<?php require_once 'styles.php'; ?>

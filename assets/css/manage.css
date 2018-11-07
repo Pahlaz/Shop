@@ -1,0 +1,76 @@
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+table .empty-data {
+	border: 0;
+}
+table input, table select {
+	width: 100%;
+	height: 40px;
+	padding: 0px 10px;
+	border: 0px;
+	font-size: 16px;
+}
+th, td {
+	border: 1px solid #1f3b65;
+}
+th:not(.empty-data) {
+	background: #2b5a79;
+	color: #eee;
+	padding: 10px;
+	font-size: 20px;
+	position: relative;
+	cursor: pointer;
+}
+th:not(.empty-data):active {
+	background: #1f3b65;
+}
+th:not(.empty-data)::after {
+	content: '';
+	position: absolute;
+    right: 5%;
+    top: 35%;
+}
+td {
+	padding: 0px 10px;
+	height: 40px;
+}
+td.btn {
+	width: 40px;
+	border: none;
+	padding: 0px 0px 0px 5px;
+}
+td.btn * {
+	width: 35px;
+	height: 35px;
+	padding: 5px;
+	border: 1px solid #505050;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    cursor: pointer;
+}
+td.btn .del, td.btn .close {
+	background: url('../img/delete.png') no-repeat;
+    background-size: contain;
+}
+td.btn .edit {
+	background: url('../img/edit.png') no-repeat;
+    background-size: contain;
+}
+td.btn .add {
+	font-size: 27px;
+	background: none;
+	color: #505050;
+	padding: 0px;
+	cursor: cell;
+}
+td.btn .update {
+	font-size: 10px;
+    padding: 0px;
+    background: none;
+}
+
+#add-row td:not(.btn), #edit-row td:not(.btn) {
+	padding: 0px;
+}

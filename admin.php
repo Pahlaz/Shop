@@ -23,7 +23,6 @@
 		
 	</div>
 
-	<script src="assets/lib/jquery/jquery-1.12.2.min.js" type="text/javascript"></script>
 	<script src="assets/js/script.js" type="text/javascript"></script>
 </body>
 </html>

@@ -19,8 +19,8 @@
 			echo "Record deleted successfully";
 		}
 		else {
-		   	mysqli_close($connection);
-		    header("location: error.php");
+		   mysqli_close($connection);
+		   header("location: error.php");
 			exit();
 		}
 	}

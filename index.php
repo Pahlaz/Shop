@@ -6,9 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SHOP | Home</title>
 
-	<link rel="stylesheet" href="assets/css/header.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/about.css">
+	<style>
+		.wrapper {
+			padding: 50px 0px 0px 0px;
+		}
+	</style>
 </head>
 <body>
 	<div class="wrapper">
@@ -23,14 +26,9 @@
 
 	</div>
 
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-
-	<script src="assets/lib/jquery/jquery-1.12.2.min.js" type="text/javascript"></script>
 	<script src="assets/js/script.js" type="text/javascript"></script>
 </body>
 </html>
-
-<?php require_once 'styles.php';?>
 
 <!-- VALIDATING THE USER ON THE PAGE -->
 <?php

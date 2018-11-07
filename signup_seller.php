@@ -42,10 +42,7 @@
 
 	</div>
 
-	<script src="assets/lib/jquery/jquery-1.12.2.min.js" type="text/javascript"></script>
 	<script src="assets/js/script.js" type="text/javascript"></script>
 	<script src="assets/js/connect.js" type="text/javascript"></script>
 </body>
 </html>
-
-<?php require_once 'styles.php';?>

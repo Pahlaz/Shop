@@ -7,18 +7,22 @@
 * {
 	box-sizing: border-box;
 }
-body:not(#editor-area){
+body {
 	margin: 0;
 	font-family: 'Roboto', 'Helvetica', sans-serif;
 	box-sizing: border-box;
 }
-a{
+header a {
 	text-decoration: none;
 }
+header button {
+	background: transparent;
+	border: 0;
+	padding: 0;
+}
 
+/* MAIN CONTAINER */
 .wrapper {
-	min-height: 100vh;
-	height: 100%;
 	padding: 70px 50px 0 50px;
 }
 
@@ -26,18 +30,30 @@ a{
 header{
 	width: 100%;
 	height: 50px;
-	padding: 10px 50px;
+	padding: 10px 20px;
 	color: #eee;
+	background: #232323;
 	z-index: 2;
 	box-shadow: 0px 3px 6px 1px rgba(0,0,0,.4);
 	position: fixed;
-  top: 0;
-  left: 0;
+  	top: 0;
+  	left: 0;
+}
+header .greetings {
+	font-weight: bold;
 }
 header .account {
 	position: absolute;
-  	right: 50px;
-	display: none;
+  	right: 20px;
+	display: inline-flex;
+}
+header .account .username {
+	display: inline-flex;
+   line-height: 30px;
+   margin-right: 10px;
+}
+header .account .greetings {
+	margin-right: 10px;
 }
 header .account .profile-pic {
 	cursor: pointer;
@@ -46,13 +62,24 @@ header .account .profile-pic {
 }
 header .account .menu {
 	position: fixed;
-	width: 250px;
-	padding: 25px 30px;
-	right: 0;
-	top: 50px;
-  display: none;
+	padding: 25px 0;
+	right: 10px;
+	top: 55px;
+  	display: none;
 	box-shadow: 0px 3px 6px 1px rgba(0,0,0,.4);
-  transition: height .3s ease-in-out;
+	background: #eee;
+	color: #232323;
+  	transition: height .3s ease-in-out;
+}
+header .account .menu:before {
+	content: '';
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border: 10px solid;
+	border-color: transparent transparent #eee transparent;
+	top: -20px;
+	right: 15px;
 }
 header .account .menu ul {
 	list-style: none;
@@ -60,17 +87,16 @@ header .account .menu ul {
 	margin: 0;
 }
 header .account .menu li {
-	text-align: center;
-	margin-bottom: 10px;
+	font-size: 20px;
+	padding: 5px 40px;
+	transition: all .3s ease-in-out;
 }
-header .account .menu li:last-child {
-	margin-bottom: 0;
+header .account .menu li:hover:not(#logout) {
+	background: #ddd;
 }
 header .account .menu a {
-	color: #eee;
-}
-header, header .account .menu {
-	background: #232323;
+	color: #232323;
+	display: block;
 }
 header .logo{
 	color: #eee;
@@ -78,8 +104,9 @@ header .logo{
 	cursor: pointer;
 	height: 30px;
 	line-height: 30px;
-	position: relative;
-	font-weight: bolder;
+	font-weight: bold;
+	font-size: 20px;
+	font-weight: 100;
 }
 
 .nav{
@@ -88,60 +115,46 @@ header .logo{
 	margin: 0;
 	padding: 0;
 }
-.nav ul{
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.nav li{
+.nav a{
 	height: 30px;
 	line-height: 30px;
 	display: inline-block;
 	border: 1px solid;
-  border-radius: 2px;
+ 	border-radius: 2px;
 	margin-right: 5px;
-}
-.nav li:last-child {
-	margin-right: 0;
-}
-.nav a{
-	display: block;
 	color: #eee;
 	font-size: 17px;
 	padding: 0 15px;
 }
-.nav li:not(#signup):hover, .nav li:not(#signup):active, .nav li:not(#signup):focus{
+.nav a:last-child {
+	margin-right: 0;
+}
+.nav a:not(#signup):hover, .nav a:not(#signup):active, .nav a:not(#signup):focus{
 	background: #2b5a79;
 }
 header #signup {
   background: #2b5a79;
 }
 
-header .logo{
-	font-size: 20px;
-	font-weight: 100;
-}
-
-#logout{
-	display: none;
-}
 #logout input{
+	color: #eee;
 	background: #2b5a79;
-  border: none;
-  color: #eee;
-  padding: 5px 20px;
-  font-size: 20px;
-  font-weight: 100;
-  outline: none;
+	padding: 5px 10px;
+  	border: none;
+  	font-size: 20px;
+  	border-radius: 3px;
 	cursor: pointer;
-	transition: background .3s ease-in-out;
+	transition: background .3s ease-in-out, color .3s ease-in-out;
 }
 #logout input:hover {
-	background: #2B5A66;
+	background: #2b5a70;
 }
 
 @media screen and (max-width: 768px) {
-	header .nav {
+	.wrapper {
+    	padding: 70px 20px 0 20px;
+	}
+	header .nav, header .account .username {
 		display: none !important;
 	}
 }

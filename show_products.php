@@ -2,21 +2,21 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SHOP | Show Customers</title>
+	<title>SHOP | Show Products</title>
 
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" href="assets/css/customer.css">
 </head>
 
-<!-- <h1>Cusotmers</h1> -->
+<h1>Products</h1>
 
 <table border="1" cellspacing="0" cellpadding="10px" style="width: 50%; border: 0; ">
 	<thead>
     	<tr>
       	<th>Name</th>
-		 	<th>Address</th>
-	      <th>City</th>
-	      <th>Phone No.</th>
+		 	<th>Category</th>
+	      <th>Brand</th>
+	      <th>Price</th>
 	      <th style="border: 0;"></th>
 	      <th style="border: 0;"></th>
 	   </tr>
@@ -34,7 +34,7 @@
 			exit();
 		}
 		else {
-			$query = "select * from shop.customers";
+			$query = "select * from shop.products";
 			$result = mysqli_query($connection, $query);
 
 			while($arr = mysqli_fetch_row($result)) {
@@ -51,15 +51,6 @@
 			}
 		}
 	?>
-		<tr>
-			<form id="add_customer" method="post">
-				<td><input type="text" name="name" placeholder="Enter name" required></td>
-				<td><input type="text" name="addr" placeholder="Enter address" required></td>
-				<td><input type="text" name="city" placeholder="Enter city" required></td>
-				<td><input type="number" name="phno" placeholder="Enter phone number" required></td>
-				<td><input type="submit" name="ac" value="Add Customer"></td>
-			</form>
-		</tr>
 	</tbody>
 </table>
 
